@@ -22,9 +22,9 @@ steps:
   displayName: 'Archive $(Build.BinariesDirectory)\out.txt'
 
 - powershell: |
-   Write-Host "Solution Version" ${env:SolutionVersion}
+   Write-Host "Solution Version" ${env:SOLUTIONVERSION}
    
-   $version = $env:SolutionVersion
+   $version = ${env:SOLUTIONVERSION}
    $versionList = $version.split('.')
    
    $versionList[$versionList.length-1] = [int]::Parse($versionList[$versionList.length-1])+1

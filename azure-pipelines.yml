@@ -18,5 +18,5 @@ steps:
 - task: ArchiveFiles@2
   displayName: 'Archive $(Build.BinariesDirectory)'
   
-- task: ArchiveFile2@2
+- task: ArchiveFiles@2
   displayName: 'Archive $(Build.BinariesDirectory)\out.txt'

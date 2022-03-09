@@ -1,0 +1,24 @@
+ #Your build pipeline references an undefined variable named ‘FirstName’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+#Your build pipeline references an undefined variable named ‘LastName’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+
+steps:
+- script: 'python app.py $(FirstName) $(LastName) > $(Build.BinariesDirectory)\out.txt'
+  displayName: 'Command Line Script'
+
+steps:
+- script: |
+   echo "1"
+   echo "Hello world"
+   
+  displayName: 'Command Line Script'
+
+steps:
+- script: |
+   echo "3"
+   echo "Hello world"
+   
+  displayName: 'Command Line Script'
+
+steps:
+- task: ArchiveFiles@2
+  displayName: 'Archive $(Build.BinariesDirectory)'

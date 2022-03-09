@@ -20,3 +20,21 @@ steps:
   
 - task: ArchiveFiles@2
   displayName: 'Archive $(Build.BinariesDirectory)\out.txt'
+
+- powershell: |
+   Write-Host "Solution Version" $env:SolutionVersion
+   
+   $version = $env:SolutionVersion
+   $versionList = $version.split('.')
+   
+   $versionList[$versionList.length-1] = [int]::Parse($versionList[$versionList.length-1])+1
+   
+   $version = [string]::join(".",$versionList)
+   
+   Write-Host "Next Version: " $version
+   
+   Write-Host "Setting SolutionVersion to ($version)"
+   Write-Host "##vso[task.setvariable variable=SolutionVersion;]$version"
+   
+   Write-Host "SolutionVersion: " $version
+  displayName: 'Get Next Version: $(Solution)'

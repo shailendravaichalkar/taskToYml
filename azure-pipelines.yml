@@ -22,7 +22,7 @@ steps:
   displayName: 'Archive $(Build.BinariesDirectory)\out.txt'
 
 - powershell: |
-   Write-Host "Solution Version" $env:SolutionVersion
+   Write-Host "Solution Version" ${env:SolutionVersion}
    
    $version = $env:SolutionVersion
    $versionList = $version.split('.')

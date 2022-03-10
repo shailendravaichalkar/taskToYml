@@ -39,8 +39,8 @@ steps:
    Write-Host "SolutionVersion: " $version
   displayName: 'Get Next Version: $(Solution)'
 
-- task: CopyPublishBuildArtifacts@1
+- task: CopyFiles@2
   inputs:
-    Contents: 'Its file artifacts'
-    ArtifactName: 'MyAppArtifacts'
-    ArtifactType: 'Container'
+    SourceFolder: '$(agent.builddirectory)'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)'

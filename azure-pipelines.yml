@@ -38,3 +38,8 @@ steps:
    
    Write-Host "SolutionVersion: " $version
   displayName: 'Get Next Version: $(Solution)'
+- task: CopyPublishBuildArtifacts@1
+  inputs:
+    Contents: 'is zip file'
+    ArtifactName: 'myAppArtifacts'
+    ArtifactType: 'FilePath'

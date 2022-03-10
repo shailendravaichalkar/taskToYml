@@ -9,6 +9,10 @@ steps:
    echo "1"
    echo "Hello world"
   displayName: 'Command Line Script'
+- task: WaelHamze.xrm-ci-framework-build-tasks.MSCRMPing.MSCRMPing@12
+  displayName: 'Ping Environment'
+  inputs:
+    crmConnectionString: '$(ConnectionString)'
 
 - script: |
    echo "3"

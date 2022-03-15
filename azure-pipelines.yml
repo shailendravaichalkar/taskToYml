@@ -1,6 +1,17 @@
  #Your build pipeline references an undefined variable named ‘FirstName’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
 #Your build pipeline references an undefined variable named ‘LastName’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
 
+parameters:
+- name: image
+  displayName: Pool Image
+  type: string
+  default: windows-latest
+  values:
+  - windows-latest
+  - ubuntu-latest
+  - macOS-latest
+
+
 steps:
 - script: 'python app.py $(FirstName) $(LastName) > $(Build.BinariesDirectory)\out.txt'
   displayName: 'Command Line Script'

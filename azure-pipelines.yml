@@ -9,6 +9,7 @@ parameters:
   values:
   - Sol1
   - Sol2
+  - Sol3
   - Base
 
 
@@ -17,7 +18,7 @@ steps:
   displayName: 'Command Line Script'
 
 - script: |
-   echo "1"
+   echo "$(SolutionName)"
    echo "Hello world"
   displayName: 'Command Line Script'
 

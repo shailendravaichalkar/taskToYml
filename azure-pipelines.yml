@@ -1,17 +1,17 @@
  #Your build pipeline references an undefined variable named ‘FirstName’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
 #Your build pipeline references an undefined variable named ‘LastName’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
 
-variables:
-  parameters:
-  - name: SolutionName
-    displayName: Select Soultion to Deploy
-    type: string
-    default: Base
-    values:
-    - Sol1
-    - Sol2
-    - Sol3
-    - Base
+
+parameters:
+- name: SolutionName
+  displayName: Select Soultion to Deploy
+  type: string
+  default: Base
+  values:
+  - Sol1
+  - Sol2
+  - Sol3
+  - Base
 
 
 steps:
